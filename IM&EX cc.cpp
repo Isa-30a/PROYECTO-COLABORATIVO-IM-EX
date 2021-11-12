@@ -16,7 +16,6 @@ int main(){
     //llamadas[minutos][tipo llamada][oficina];
     //matrices se realizaran debido a que el problema no pide (al menos explicitamente) que guarde la informacion del vector-> haremos esto de ultimo
     string nombre[12]={"Carlos","Luis","Pedro","Samara","Marta","Maria","Diego","Cielo","Alvaro","Daniel","Camila","Camilo"};//12 nombres
-    int oficina[12]={1,3,2,1,2,1,3,2,1,2,3,1};//12 llamadas
     int llamadas[12][12]={{30,1,1},{10,3,3},{15,2,2},{19,1,1},{25,2,2},{5,2,1},{29,3,3},{2,2,1},{27,1,2},{21,3,1},{12,1,3},{15,3,2}};//12 llamadas
     /*
     Nombre del funcionario que realizó la llamada
@@ -64,77 +63,75 @@ int main(){
     do{
         cin>>t_llamada;
     }while(t_llamada<1 && t_llamada>3);*/
-
+    do{
     //Menu general
-    cout<<"\tIM&EX SA."<<endl;
-    cout<<"\tCONTROL DE LLAMADAS - CENTRO DE COMUNICACIONES"<<endl;
-    cout<<"1. Registro de llamadas"<<endl;
-    cout<<"2. Reportes"<<endl;
-    cout<<"3. Estadisticas"<<endl;
-    cout<<"4. Salir"<<endl;
-    
-    do{ 
-        cout<<"Ingrese la opcion: ";cin>>op;
-    }while(op<1 && op>4);
+        cout<<"\tIM&EX SA."<<endl;
+        cout<<"\tCONTROL DE LLAMADAS - CENTRO DE COMUNICACIONES"<<endl;
+        cout<<"1. Registro de llamadas"<<endl;
+        cout<<"2. Reportes"<<endl;
+        cout<<"3. Estadisticas"<<endl;
+        cout<<"4. Salir"<<endl;
+        
+        do{ 
+            cout<<"Ingrese la opcion: ";cin>>op;
+        }while(op<1 && op>4);
 
-    switch (op){
-        case 1://Registro de llamadas
-            cout<<"Numero de llamadas realizadas: "<<to_llamadas<<endl;
-            cout<<setw(15)<<"# Llamada"<<setw(15)<<"Funcionario" <<setw(15)<<"oficina"<<setw(15)<<"tipo llamada"<<setw(15)<<"cant minutos"<<endl;
-            
-            for(int p=0;p<12;p++){
-                cout<<setw(15)<<p+1<<setw(15)<<nombre[p]<<setw(15)<<llamadas[p][2]<<setw(15)<<llamadas[p][1]<<setw(15)<<llamadas[p][0]<<endl;
-            }
-            
-            break;
-        case 2:// Reportes / consultas
-            cout<<"1. Consulta por oficina"<<endl;
-            cout<<"2. Consulta por tipo de llamada"<<endl;
-            cout<<"3. Consulta llamadas por funcionario"<<endl;
-            cout<<"4. Reporte de llamadas"<<endl;
-            do{ 
-                cout<<"Ingrese la opcion: ";cin>>op2;
-            }while(op2<1 && op2>4);
+        switch (op){
+            case 1://Registro de llamadas
+                cout<<"Numero de llamadas realizadas: "<<to_llamadas<<endl;
+                cout<<setw(15)<<"# Llamada"<<setw(15)<<"Funcionario" <<setw(15)<<"oficina"<<setw(15)<<"tipo llamada"<<setw(15)<<"cant minutos"<<endl;
+                
+                for(int p=0;p<12;p++){
+                    cout<<setw(15)<<p+1<<setw(15)<<nombre[p]<<setw(15)<<llamadas[p][2]<<setw(15)<<llamadas[p][1]<<setw(15)<<llamadas[p][0]<<endl;
+                }
+                
+                break;
+            case 2:// Reportes / consultas
+                cout<<"1. Consulta por oficina"<<endl;
+                cout<<"2. Consulta por tipo de llamada"<<endl;
+                cout<<"3. Consulta llamadas por funcionario"<<endl;
+                cout<<"4. Reporte de llamadas"<<endl;
+                do{ 
+                    cout<<"Ingrese la opcion: ";cin>>op2;
+                }while(op2<1 && op2>4);
 
-            switch (op2){
+                switch (op2){
 
-                case 1://Consulta por oficina
-                    cout<<"Se encuentra en el espacio de consulta por oficina"<<endl;
-                    cout<<"Ingresar la oficina a consultar: ";cin>>con_ofi;
-                    for (int k = 0; k < to_llamadas; k++)
-                    {
-                        if(llamadas[k][2]==con_ofi){
-                            cout<<setw(15)<<k+1<<setw(15)<<nombre[k]<<setw(15)<<llamadas[k][2]<<setw(15)<<llamadas[k][1]<<setw(15)<<llamadas[k][0]<<endl;
-
+                    case 1://Consulta por oficina
+                        cout<<"Se encuentra en el espacio de consulta por oficina"<<endl;
+                        cout<<"Ingresar la oficina a consultar: ";cin>>con_ofi;
+                        cout<<setw(15)<<"# Llamada"<<setw(15)<<"Funcionario" <<setw(15)<<"oficina"<<setw(15)<<"tipo llamada"<<setw(15)<<"cant minutos"<<endl;
+                        for (int k = 0; k < to_llamadas; k++)
+                        {
+                            if(llamadas[k][2]==con_ofi){
+                                cout<<setw(15)<<k+1<<setw(15)<<nombre[k]<<setw(15)<<llamadas[k][2]<<setw(15)<<llamadas[k][1]<<setw(15)<<llamadas[k][0]<<endl;
+                            }
                         }
-                    }
-                    
-                    
-                    break;
-                case 2://Consulta por tipo de llamadas
+                        break;
+                    case 2://Consulta por tipo de llamadas
 
-                    break;
-                case 3://Consulta llamadas por funcionario
+                        break;
+                    case 3://Consulta llamadas por funcionario
 
-                    break;
+                        break;
 
-                default://Reporte de llamadas
-                    break;
-            }
+                    default://Reporte de llamadas
+                        break;
+                }
 
-            break;
-        case 3://Estadisticas
+                break;
+            case 3://Estadisticas
 
 
 
-            break;
-        default://Mesnsaje salida
+                break;
+            default://Mesnsaje salida
 
-            cout<<"Esta saliendo de IM&EX S.A"<<endl;
-            system("pause");
-            break;
-    }
-
+                cout<<"Esta saliendo de IM&EX S.A"<<endl;
+                system("pause");
+                break;
+        }
+    }while(op!=4);
 
 
 
