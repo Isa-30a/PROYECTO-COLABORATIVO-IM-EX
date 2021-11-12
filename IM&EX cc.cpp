@@ -80,9 +80,10 @@ int main(){
     switch (op){
         case 1://Registro de llamadas
             cout<<"Numero de llamadas realizadas: "<<to_llamadas<<endl;
+            cout<<setw(15)<<"# Llamada"<<setw(15)<<"Funcionario" <<setw(15)<<"oficina"<<setw(15)<<"tipo llamada"<<setw(15)<<"cant minutos"<<endl;
+            
             for(int p=0;p<12;p++){
-                cout<<setw(15)<<"# Llamada"<<setw(15)<<"Funcionario" <<setw(15)<<"oficina"<<setw(15)<<"tipo llamada"<<setw(15)<<"cant minutos"<<endl;
-                cout<<setw(15)<<p<<setw(15)<<nombre[p]<<setw(15)<<llamadas[p][2]<<setw(15)<<llamadas[p][1]<<setw(15)<<llamadas[p][0]<<endl;
+                cout<<setw(15)<<p+1<<setw(15)<<nombre[p]<<setw(15)<<llamadas[p][2]<<setw(15)<<llamadas[p][1]<<setw(15)<<llamadas[p][0]<<endl;
             }
             
             break;
@@ -100,10 +101,14 @@ int main(){
                 case 1://Consulta por oficina
                     cout<<"Se encuentra en el espacio de consulta por oficina"<<endl;
                     cout<<"Ingresar la oficina a consultar: ";cin>>con_ofi;
-                    while (llamadas[k][2]=con_ofi)
+                    for (int k = 0; k < to_llamadas; k++)
                     {
-                        
+                        if(llamadas[k][2]==con_ofi){
+                            cout<<setw(15)<<k+1<<setw(15)<<nombre[k]<<setw(15)<<llamadas[k][2]<<setw(15)<<llamadas[k][1]<<setw(15)<<llamadas[k][0]<<endl;
+
+                        }
                     }
+                    
                     
                     break;
                 case 2://Consulta por tipo de llamadas
