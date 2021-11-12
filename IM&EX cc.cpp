@@ -7,11 +7,27 @@ int main(){
     //variables de opciones
     int op,op2, ofi;
     //variables vectores
-    int llamadas;
+    int ;
     //variables random
-    int t_llamada,min;
-    cout<<"Ingresar cantidad de llamadas realizadas";cin>>llamadas;
-    string nombres[llamadas];
+    int t_llamada,min,to_llamadas;
+
+
+    cout<<"Ingresar cantidad de llamadas realizadas";cin>>to_llamadas;
+
+    //matrices se realizaran debido a que el problema no pide (al menos explicitamente) que guarde la informacion del vector
+    string nombre[12]={"Carlos","Luis","Pedro","Samara","Marta","Maria","Diego","Cielo","Alvaro","Daniel","Camila","Camilo"};//12 nombres
+    int oficina[12]={1,3,2,1,2,1,3,2,1,2,3,1};//12 llamadas
+    int llamadas[12][12]={{30,1},{10,3},{15,2},{19,1},{25,2},{5,2},{29,3},{2,2},{27,1},{21,3},{12,1},{15,3}};//12 llamadas
+    /*
+    Nombre del funcionario que realizó la llamada
+    Oficina o dependencia de la cual se realiza la llamada (1: Logística; 2: Recursos humanos; 3: Financiero)
+    Cantidad de minutos de la llamada
+    Tipo de llamada (1: local; 2: celular; 3: internacional).
+    */
+   
+
+
+
 
     cout<<"Ingrese la oficina desde la cual se realiza la llamadas: ";
     cout<<"1. Logistica"<<endl;
