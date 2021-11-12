@@ -13,11 +13,11 @@ int main(){
 
 
     cout<<"Ingresar cantidad de llamadas realizadas"<<endl;cin>>to_llamadas;
-
+    //llamadas[minutos][tipo llamada][oficina];
     //matrices se realizaran debido a que el problema no pide (al menos explicitamente) que guarde la informacion del vector-> haremos esto de ultimo
     string nombre[12]={"Carlos","Luis","Pedro","Samara","Marta","Maria","Diego","Cielo","Alvaro","Daniel","Camila","Camilo"};//12 nombres
     int oficina[12]={1,3,2,1,2,1,3,2,1,2,3,1};//12 llamadas
-    int llamadas[12][12]={{30,1},{10,3},{15,2},{19,1},{25,2},{5,2},{29,3},{2,2},{27,1},{21,3},{12,1},{15,3}};//12 llamadas
+    int llamadas[12][12]={{30,1,1},{10,3,3},{15,2,2},{19,1,1},{25,2,2},{5,2,1},{29,3,3},{2,2,1},{27,1,2},{21,3,1},{12,1,3},{15,3,2}};//12 llamadas
     /*
     Nombre del funcionario que realizó la llamada
     Oficina o dependencia de la cual se realiza la llamada (1: Logística; 2: Recursos humanos; 3: Financiero)
@@ -82,7 +82,7 @@ int main(){
             cout<<"Numero de llamadas realizadas: "<<to_llamadas<<endl;
             for(int p=0;p<12;p++){
                 cout<<setw(15)<<"# Llamada"<<setw(15)<<"Funcionario" <<setw(15)<<"oficina"<<setw(15)<<"tipo llamada"<<setw(15)<<"cant minutos"<<endl;
-                cout<<setw(15)<<p<<setw(15)<<nombre[p]<<setw(15)<<oficina[p]<<setw(15)<<llamadas[p][1]<<setw(15)<<llamadas[p][0]<<endl;
+                cout<<setw(15)<<p<<setw(15)<<nombre[p]<<setw(15)<<llamadas[p][2]<<setw(15)<<llamadas[p][1]<<setw(15)<<llamadas[p][0]<<endl;
             }
             
             break;
@@ -99,7 +99,11 @@ int main(){
 
                 case 1://Consulta por oficina
                     cout<<"Se encuentra en el espacio de consulta por oficina"<<endl;
-
+                    while (llamadas[k][2])
+                    {
+                        /* code */
+                    }
+                    
                     break;
                 case 2://Consulta por tipo de llamadas
 
