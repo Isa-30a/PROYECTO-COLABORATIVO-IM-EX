@@ -7,12 +7,12 @@ int main(){
     //variables de opciones
     int op,op2, ofi;
     //variables vectores
-    int ;
+    
     //variables random
     int t_llamada,min,to_llamadas;
 
 
-    cout<<"Ingresar cantidad de llamadas realizadas";cin>>to_llamadas;
+    cout<<"Ingresar cantidad de llamadas realizadas"<<endl;cin>>to_llamadas;
 
     //matrices se realizaran debido a que el problema no pide (al menos explicitamente) que guarde la informacion del vector-> haremos esto de ultimo
     string nombre[12]={"Carlos","Luis","Pedro","Samara","Marta","Maria","Diego","Cielo","Alvaro","Daniel","Camila","Camilo"};//12 nombres
@@ -40,7 +40,7 @@ int main(){
     }
 
 
-    cout<<"Ingrese la oficina desde la cual se realiza la llamadas: ";
+    cout<<"Ingrese la oficina desde la cual se realiza la llamadas: "<<endl;
     cout<<"1. Logistica"<<endl;
     cout<<"2. Recursos humanos"<<endl;
     cout<<"3. Financiero "<<endl;    
