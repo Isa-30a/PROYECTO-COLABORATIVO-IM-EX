@@ -9,7 +9,7 @@ int main(){
     //variables vectores
     
     //variables random
-    int t_llamada,min,to_llamadas;
+    int t_llamada,min,to_llamadas=12;//el valor de to_llamadas debe cambiarse
 
 
     cout<<"Ingresar cantidad de llamadas realizadas"<<endl;cin>>to_llamadas;
@@ -39,7 +39,7 @@ int main(){
         }
     }
 
-
+    /*
     cout<<"Ingrese la oficina desde la cual se realiza la llamadas: "<<endl;
     cout<<"1. Logistica"<<endl;
     cout<<"2. Recursos humanos"<<endl;
@@ -63,7 +63,9 @@ int main(){
     cout<<"3. Internacional"<<endl;
     do{
         cin>>t_llamada;
-    }while(t_llamada<1 && t_llamada>3);
+    }while(t_llamada<1 && t_llamada>3);*/
+
+    //Menu general
     cout<<"\tIM&EX SA."<<endl;
     cout<<"\tCONTROL DE LLAMADAS - CENTRO DE COMUNICACIONES"<<endl;
     cout<<"1. Registro de llamadas"<<endl;
