@@ -95,6 +95,23 @@ int main(){
                 cout<<"Ingrese la opcion: ";cin>>op2;
             }while(op2<1 && op2>4);
 
+            switch (op2){
+
+                case 1://Consulta por oficina
+                    cout<<"Se encuentra en el espacio de consulta por oficina"<<endl;
+
+                    break;
+                case 2://Consulta por tipo de llamadas
+
+                    break;
+                case 3://Consulta llamadas por funcionario
+
+                    break;
+
+                default://Reporte de llamadas
+                    break;
+            }
+
             break;
         case 3://Estadisticas
 
