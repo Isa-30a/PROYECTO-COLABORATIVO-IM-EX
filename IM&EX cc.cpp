@@ -4,11 +4,15 @@ using namespace std;
 
 int main(){
     //variables de opciones
-    int op,op2;
+    int op,op2, ofi;
     //variables vectores
-    int n;
-    cout<<"Ingresar numero de llamadas realizadas";cin>>n;
-    string nombres[n];
+    int llamadas;
+    //variables random
+    int min;
+    cout<<"Ingresar cantidad de llamadas realizadas";cin>>llamadas;
+    string nombres[llamadas];
+
+
 
     cout<<"\tIM&EX SA."<<endl;
     cout<<"\tCONTROL DE LLAMADAS - CENTRO DE COMUNICACIONES"<<endl;
