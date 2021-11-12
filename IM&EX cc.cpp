@@ -7,12 +7,12 @@ int main(){
     //variables de opciones
     int op,op2, ofi,con_ofi, con_llamada;
     //variables 
-    int MinXdependencia,llamadasXdependencia;
+    int MinXdependencia,llamadasXdependencia=1;
     //variables random
     int t_llamada,min,to_llamadas=12, k=0;//el valor de to_llamadas debe cambiarse
 
 
-    cout<<"Ingresar cantidad de llamadas realizadas"<<endl;cin>>to_llamadas;
+    //cout<<"Ingresar cantidad de llamadas realizadas"<<endl;cin>>to_llamadas;
     //llamadas[minutos][tipo llamada][oficina];
     //matrices se realizaran debido a que el problema no pide (al menos explicitamente) que guarde la informacion del vector-> haremos esto de ultimo
     string nombre[12]={"Carlos","Luis","Pedro","Samara","Marta","Maria","Diego","Cielo","Alvaro","Daniel","Camila","Camilo"};//12 nombres
@@ -65,7 +65,7 @@ int main(){
     }while(t_llamada<1 && t_llamada>3);*/
     do{
     //Menu general
-        cout<<"\tIM&EX SA."<<endl;
+        cout<<"\t\tIM&EX SA."<<endl;
         cout<<"\tCONTROL DE LLAMADAS - CENTRO DE COMUNICACIONES"<<endl;
         cout<<"1. Registro de llamadas"<<endl;
         cout<<"2. Reportes"<<endl;
@@ -79,7 +79,7 @@ int main(){
         switch (op){
             case 1://Registro de llamadas
                 cout<<"Numero de llamadas realizadas: "<<to_llamadas<<endl;
-                cout<<setw(15)<<"# Llamada"<<setw(15)<<"Funcionario" <<setw(15)<<"oficina"<<setw(15)<<"tipo llamada"<<setw(15)<<"cant minutos"<<endl;
+                cout<<setw(15)<<"# Llamada"<<setw(15)<<"Funcionario" <<setw(15)<<"Oficina"<<setw(15)<<"Tipo llamada"<<setw(15)<<"Cant minutos"<<endl;
                 
                 for(int p=0;p<12;p++){
                     cout<<setw(15)<<p+1<<setw(15)<<nombre[p]<<setw(15)<<llamadas[p][2]<<setw(15)<<llamadas[p][1]<<setw(15)<<llamadas[p][0]<<endl;
@@ -103,11 +103,11 @@ int main(){
                         cout<<"2. Recursos humanos"<<endl;
                         cout<<"3. Financiero "<<endl;
                         cout<<"Ingresar numero de la oficina a consultar: ";cin>>con_ofi;
-                        cout<<setw(15)<<"# Llamada"<<setw(15)<<"Funcionario" <<setw(15)<<"oficina"<<setw(15)<<"tipo llamada"<<setw(15)<<"cant minutos"<<"cant a pagar"<<endl;
+                        cout<<setw(15)<<"# Llamada"<<setw(15)<<"Funcionario" <<setw(15)<<"Oficina"<<setw(15)<<"Tipo llamada"<<setw(15)<<"Cant minutos"<<setw(15)<<"Cant a pagar"<<endl;
                         for (int k = 0; k < to_llamadas; k++)
                         {
                             if(llamadas[k][2]==con_ofi){
-                                cout<<setw(15)<<k+1<<setw(15)<<nombre[k]<<setw(15)<<llamadas[k][2]<<setw(15)<<llamadas[k][1]<<setw(15)<<llamadas[k][0]<<pago[k]<<endl;
+                                cout<<setw(15)<<k+1<<setw(15)<<nombre[k]<<setw(15)<<llamadas[k][2]<<setw(15)<<llamadas[k][1]<<setw(15)<<llamadas[k][0]<<setw(15)<<pago[k]<<endl;
                             }
                         }
                         break;
@@ -118,13 +118,13 @@ int main(){
                         cout<<"2. Celular"<<endl;
                         cout<<"3. Internacional"<<endl;
                         cout<<"Ingresar el numero del tipo de llamada a consultar: ";cin>>con_llamada;
-                        cout<<setw(15)<<"# Llamada"<<setw(15)<<"Funcionario" <<setw(15)<<"oficina"<<setw(15)<<"tipo llamada"<<setw(15)<<"cant minutos"<<setw(15)<<"Minutos por dependencia"<<setw(15)<<"Cant de llamadas"<<endl;
+                        cout<<setw(15)<<"# Llamada"<<setw(15)<<"Funcionario" <<setw(15)<<"Oficina"<<setw(15)<<"Tipo llamada"<<setw(15)<<"Cant minutos "<<setw(15)<<"Min por dependencia "<<setw(15)<<"Cant de llamadas "<<endl;
                         for (int k = 0; k < to_llamadas; k++)
                         {
                             if(llamadas[k][1]==con_llamada){
                                 MinXdependencia+=llamadas[k][0];
-                                llamadasXdependencia++;
                                 cout<<setw(15)<<k+1<<setw(15)<<nombre[k]<<setw(15)<<llamadas[k][2]<<setw(15)<<llamadas[k][1]<<setw(15)<<llamadas[k][0]<<setw(15)<<MinXdependencia<<setw(15)<<llamadasXdependencia<<endl;
+                                llamadasXdependencia++;
                             }
                         }
                         break;
