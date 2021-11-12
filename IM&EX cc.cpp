@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -8,12 +9,34 @@ int main(){
     //variables vectores
     int llamadas;
     //variables random
-    int min;
+    int t_llamada,min;
     cout<<"Ingresar cantidad de llamadas realizadas";cin>>llamadas;
     string nombres[llamadas];
 
+    cout<<"Ingrese la oficina desde la cual se realiza la llamadas: ";
+    cout<<"1. Logistica"<<endl;
+    cout<<"2. Recursos humanos"<<endl;
+    cout<<"3. Financiero "<<endl;    
+    do{
+        cout<<"Ingrese la opcion: ";cin>>ofi;
+    }while(ofi>3 && ofi<1);
 
+    do{
+        cout<<"Ingrese la duracion de la llamada (minutos): ";cin>>min;
 
+        if(min<1 && min<30){
+            cout<<"Favor ingresar una cantidad valida ";
+        }
+    }while(min<1 && min<30);
+
+    
+    cout<<"Ingresar el tipo de llamada: "<<endl;
+    cout<<"1. Local"<<endl;
+    cout<<"2. Celular"<<endl;
+    cout<<"3. Internacional"<<endl;
+    do{
+        cin>>t_llamada;
+    }while(t_llamada<1 && t_llamada>3);
     cout<<"\tIM&EX SA."<<endl;
     cout<<"\tCONTROL DE LLAMADAS - CENTRO DE COMUNICACIONES"<<endl;
     cout<<"1. Registro de llamadas"<<endl;
