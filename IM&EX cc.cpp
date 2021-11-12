@@ -5,11 +5,11 @@ using namespace std;
 
 int main(){
     //variables de opciones
-    int op,op2, ofi;
+    int op,op2, ofi,con_ofi;
     //variables vectores
     
     //variables random
-    int t_llamada,min,to_llamadas=12;//el valor de to_llamadas debe cambiarse
+    int t_llamada,min,to_llamadas=12, k=0;//el valor de to_llamadas debe cambiarse
 
 
     cout<<"Ingresar cantidad de llamadas realizadas"<<endl;cin>>to_llamadas;
@@ -99,9 +99,10 @@ int main(){
 
                 case 1://Consulta por oficina
                     cout<<"Se encuentra en el espacio de consulta por oficina"<<endl;
-                    while (llamadas[k][2])
+                    cout<<"Ingresar la oficina a consultar: ";cin>>con_ofi;
+                    while (llamadas[k][2]=con_ofi)
                     {
-                        /* code */
+                        
                     }
                     
                     break;
