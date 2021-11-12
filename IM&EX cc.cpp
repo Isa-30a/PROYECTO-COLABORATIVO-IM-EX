@@ -6,8 +6,8 @@ using namespace std;
 int main(){
     //variables de opciones
     int op,op2, ofi,con_ofi, con_llamada;
-    //variables vectores
-    
+    //variables 
+    int MinXdependencia,llamadasXdependencia;
     //variables random
     int t_llamada,min,to_llamadas=12, k=0;//el valor de to_llamadas debe cambiarse
 
@@ -112,16 +112,19 @@ int main(){
                         }
                         break;
                     case 2://Consulta por tipo de llamadas
+                        MinXdependencia=0;
                         cout<<"Se encuentra en el espacio de consulta por tipo de llamadas "<<endl;
                         cout<<"1. Local"<<endl;
                         cout<<"2. Celular"<<endl;
                         cout<<"3. Internacional"<<endl;
                         cout<<"Ingresar el numero del tipo de llamada a consultar: ";cin>>con_llamada;
-                        cout<<setw(15)<<"# Llamada"<<setw(15)<<"Funcionario" <<setw(15)<<"oficina"<<setw(15)<<"tipo llamada"<<setw(15)<<"cant minutos"<<endl;
+                        cout<<setw(15)<<"# Llamada"<<setw(15)<<"Funcionario" <<setw(15)<<"oficina"<<setw(15)<<"tipo llamada"<<setw(15)<<"cant minutos"<<setw(15)<<"Minutos por dependencia"<<setw(15)<<"Cant de llamadas"<<endl;
                         for (int k = 0; k < to_llamadas; k++)
                         {
                             if(llamadas[k][1]==con_llamada){
-                                cout<<setw(15)<<k+1<<setw(15)<<nombre[k]<<setw(15)<<llamadas[k][2]<<setw(15)<<llamadas[k][1]<<setw(15)<<llamadas[k][0]<<endl;
+                                MinXdependencia+=llamadas[k][0];
+                                llamadasXdependencia++;
+                                cout<<setw(15)<<k+1<<setw(15)<<nombre[k]<<setw(15)<<llamadas[k][2]<<setw(15)<<llamadas[k][1]<<setw(15)<<llamadas[k][0]<<setw(15)<<MinXdependencia<<setw(15)<<llamadasXdependencia<<endl;
                             }
                         }
                         break;
