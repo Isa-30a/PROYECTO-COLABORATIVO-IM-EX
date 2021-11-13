@@ -5,7 +5,8 @@ using namespace std;
 
 int main(){
     //variables de opciones
-    int op,op2, ofi,con_ofi, con_llamada;
+    int op, op2, ofi,con_ofi, con_llamada;
+    string con_fun;
     //variables 
     int MinXdependencia,llamadasXdependencia=1;
     //variables random
@@ -129,6 +130,14 @@ int main(){
                         }
                         break;
                     case 3://Consulta llamadas por funcionario
+                        cout<<"Se encuentra en el espacio de consulta por funcionario "<<endl;cin>>con_fun;
+                        cout<<setw(15)<<"# Llamada"<<setw(15)<<"Funcionario" <<setw(15)<<"Tipo llamada"<<setw(15)<<"Cant minutos "<<endl;
+                        for (int g = 0; g < to_llamadas; g++)
+                        {
+                            if(nombre[g]==con_fun){
+                                cout<<setw(15)<< g+1 <<setw(15)<< nombre[g] <<setw(15)<< llamadas[g][1] <<setw(15)<< llamadas[g][0] <<endl;
+                            }
+                        }
 
                         break;
 
