@@ -5,7 +5,7 @@ using namespace std;
 
 int main(){
     //variables de opciones
-    int op, op2, ofi,con_ofi, con_llamada;
+    int op, op2, ofi,con_ofi, con_llamada,l;
     string con_fun;
     //variables 
     int MinXdependencia,llamadasXdependencia=1, min_lo1, min_lo2,min_lo3, min_rh1,min_rh2,min_rh3,min_finan1,min_finan2,min_finan3;
@@ -36,7 +36,7 @@ int main(){
 
     do{
     //Menu general
-        cout<<"\t\tIM&EX SA."<<endl;
+        cout<<setw(15)<<"IM&EX SA."<<endl;
         cout<<"\tCONTROL DE LLAMADAS - CENTRO DE COMUNICACIONES"<<endl;
         cout<<"1. Registro de llamadas"<<endl;
         cout<<"2. Reportes"<<endl;
@@ -120,12 +120,18 @@ int main(){
                         }
                         break;
                     case 3://Consulta llamadas por funcionario
-                        cout<<"Se encuentra en el espacio de consulta por funcionario "<<endl;cin>>con_fun;
+                        cout<<"Se encuentra en el espacio de consulta por funcionario "<<endl;
+                        cout<<"Ingrese el nombre del funcionario: ";cin>>con_fun;
                         cout<<setw(15)<<"# Llamada"<<setw(15)<<"Funcionario" <<setw(15)<<"Tipo llamada"<<setw(15)<<"Cant minutos "<<endl;
                         for (int g = 0; g < to_llamadas; g++)
                         {
                             if(nombre[g]==con_fun){
                                 cout<<setw(15)<< g+1 <<setw(15)<< nombre[g] <<setw(15)<< llamadas[g][1] <<setw(15)<< llamadas[g][0] <<endl;
+                                l=1;
+                            }
+                            else if(l<=0)
+                            {
+                                cout<<"No se encuentra un empleado con ese nombre";
                             }
                         }
 
@@ -143,7 +149,7 @@ int main(){
                         min_rh3=0;
                         //llamadas[0 minutos][1 tipo llamada][2 oficina];
                         cout<<"Numero de llamadas realizadas: "<<to_llamadas<<endl;
-                        cout<<setw(15)<<"# Llamada"<<setw(15)<<"Funcionario" <<setw(15)<<"Oficina"<<setw(15)<<"Tipo llamada"<<setw(15)<<"Cant minutos oficina"<<setw(15)<<""<<endl;
+                        cout<<setw(15)<<"# Llamada"<<setw(15)<<"Funcionario" <<setw(15)<<"Oficina"<<setw(15)<<"Tipo llamada"<<setw(15)<<"Minutos"<<setw(15)<<"Pago"<<setw(15)<<""<<endl;
                         
                         for(int p=0;p<12;p++){
                             if(llamadas[p][2]==1){//en logistica
@@ -179,23 +185,20 @@ int main(){
                                     min_finan3+=llamadas[p][0];
                                 }
                             }
-                            cout<<setw(15)<<p+1<<setw(15)<<nombre[p]<<setw(15)<<llamadas[p][2]<<setw(15)<<llamadas[p][1]<<setw(15)<<llamadas[p][0]<<pago[p]<<endl;
+                            cout<<setw(15)<<p+1<<setw(15)<<nombre[p]<<setw(15)<<llamadas[p][2]<<setw(15)<<llamadas[p][1]<<setw(15)<<llamadas[p][0]<<setw(15)<<pago[p]<<endl;
                         }
-                        cout<<"\tLOGISTICA";
+                        cout<<"\tLOGISTICA"<<endl;
+                        cout<<setw(15)<<"LLAMADAS LOCALES"<<setw(15)<<"LLAMADAS CELULARES "<<setw(15)<<"LLAMADAS INTERNACIONALES"<<endl;    
+                        cout<<setw(15)<<min_lo1<<setw(15)<<min_lo2<<setw(15)<<min_lo3<<endl;
+
+                        cout<<"\tRECURSOS HUMANOS"<<endl;
                         cout<<setw(15)<<"LLAMADAS LOCALES"<<setw(15)<<"LLAMADAS CELULARES "<<setw(15)<<"LLAMADAS INTERNACIONALES"<<endl;
-                        for(int u=0; u<to_llamadas;u++){
-                            cout<<setw(15)<<min_lo1<<setw(15)<<min_lo2<<setw(15)<<min_lo3<<endl;
-                        }
-                        cout<<"\tRECURSOS HUMANOS";
+                        cout<<setw(15)<<min_rh1<<setw(15)<<min_rh2<<setw(15)<<min_rh3<<endl;
+                        
+                        cout<<"\tFINANCIERO"<<endl;
                         cout<<setw(15)<<"LLAMADAS LOCALES"<<setw(15)<<"LLAMADAS CELULARES "<<setw(15)<<"LLAMADAS INTERNACIONALES"<<endl;
-                        for(int y=0;y<to_llamadas;y++){
-                            cout<<setw(15)<<min_rh1<<setw(15)<<min_rh2<<setw(15)<<min_rh3<<endl;
-                        }
-                        cout<<"\tFINANCIERO";
-                        cout<<setw(15)<<"LLAMADAS LOCALES"<<setw(15)<<"LLAMADAS CELULARES "<<setw(15)<<"LLAMADAS INTERNACIONALES"<<endl;
-                        for(int r=0;r<to_llamadas;r++){
-                            cout<<setw(15)<<min_finan1<<setw(15)<<min_finan2<<setw(15)<<min_finan3<<endl;
-                        }
+                        cout<<setw(15)<<min_finan1<<setw(15)<<min_finan2<<setw(15)<<min_finan3<<endl;
+                        
                     break;
                 }
 
