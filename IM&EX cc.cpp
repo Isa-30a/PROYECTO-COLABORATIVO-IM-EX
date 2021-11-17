@@ -5,7 +5,7 @@ using namespace std;
 
 int main(){
     //variables de opciones
-    int op, op2, ofi,con_ofi, con_llamada,l,pos,max_mi;
+    int op, op2, ofi,con_ofi, con_llamada,l,max,max_mi,p;
     string con_fun;
     //variables 
     int MinXdependencia,llamadasXdependencia=1, min_lo1, min_lo2,min_lo3, min_rh1,min_rh2,min_rh3,min_finan1,min_finan2,min_finan3;
@@ -237,14 +237,11 @@ int main(){
                 //2. Llamada de mayor duración: indicar el funcionario(s), dependencia(s), tipo y tiempo duración 
                 cout <<"\n\n";
                 cout<<setw(15)<<"Funcionario" <<setw(15)<<"Oficina"<<setw(15)<<"Tipo llamada"<<setw(15)<<"Minutos"<<setw(15)<<""<<endl;
-                for (int p = 0; p < to_llamadas; p++){
-                    pos=p;
-                    if(llamadas[p][0]>llamadas[pos][0]){
-                        max_mi=llamadas[p][0];
+                for (p = 0; p < to_llamadas; p++){
+                    if(llamadas[p][0]>llamadas[max][0]){
+                        max=p;
                     }
-                    else{
-                        max_mi;
-                    }
+                    
                     /*la idea es hacer que evalue los min ant con los actuales y sin son mayores que guarde ese valor y si no pues que siga buscando
 					for(int i=0; i<8; i++){
 						pos = i;
@@ -253,10 +250,24 @@ int main(){
 							llamadas[pos]=llamadas[pos-1];       
 							pos--;
 						}
-						llamadas[pos] = aux;              
+						llamadas[pos] = aux;   
+
+                        for(int i=0;i<8;i++){
+						min = i; //guarda la posicion del numero minimo hacemos que el primero numero se tome como minimo en la primera iteracion, luego sera evaluado
+						
+						for(int j=i+1; j<8; j++){ // el ciclo empezara a evaluar desde el 2do elemento de nuestro vector a ordenar
+							if (copia[j]<copia[min]){ //va a evaluar si el siguiente valor  al inicial tomado como minimo es o no el numero minimo
+								min = j;//si es minimo intercambiamos los valores del anterior(en la posicion min) con el actual (en la posicion j) para ir ordenando nuestro vector y el nuevo valor minimo sera el elemento en la posicion j 
+							}
+						}
+						aux = copia[i];//la variable aux tomara el valor del elemento copia en el indice i para realizar el intercambio
+						copia[i] = copia[min];//el elemento en la posicion i toma el valor del elemento en la posicion menor
+						copia[min] = aux;//y por ultimo hacemos que el elemento en la posicion supuestamente minima sea igual al elemento en la posicion i que seria la verdaderamente minima procedimiento que se repetira mientras el arreglo no este ordenado
+					}        
 					}*/
-                    cout<<setw(15)<<nombre[p]<<setw(15)<<llamadas[p][2]<<setw(15)<<llamadas[p][1]<<setw(15)<<llamadas[p][0]<<endl;
                 }
+                cout<<setw(15)<<nombre[max]<<setw(15)<<llamadas[max][2]<<setw(15)<<llamadas[max][1]<<setw(15)<<llamadas[max][0]<<endl;
+               
                 //3. Monto total a pagar por cada tipo de llamada (1: Local - 2: Celular - 3: Internacional) y el Tiempo promedio de las mismas
                 cout<<"\n\n";
                 cout<<"El total a pagar por las llamadas locales es de $" <<(min_lo1+min_rh1+min_finan1)*80<<" y posee un tiempo promedio de "<<(min_lo1+min_rh1+min_finan1)/3 << endl;
