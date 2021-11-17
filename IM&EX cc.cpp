@@ -215,23 +215,23 @@ int main(){
                 }
 
                 if(min_lo2>min_rh1 && min_lo2>min_finan2 ){//evaluamos cual de las celulares es mayor
-                    cout <<"\n\nLa dependencia de logistica realizo mayor número de llamadas locales con " << min_lo1 <<" para un monto total a pagar de $"<<min_lo1*800 <<endl;
+                    cout <<"\n\nLa dependencia de logistica realizo mayor número de llamadas celulares con " << min_lo2 <<" para un monto total a pagar de $"<<min_lo2*800 <<endl;
                 }
                 else if(min_rh2>min_lo2 && min_rh2>min_finan2){
-                    cout <<"\n\nLa dependencia de recursos humanos realizo mayor número de llamadas locales con " << min_rh1 <<" para un monto total a pagar de $"<<min_rh1*800 <<endl;
+                    cout <<"\n\nLa dependencia de recursos humanos realizo mayor número de llamadas celulares con " << min_rh2 <<" para un monto total a pagar de $"<<min_rh2*800 <<endl;
                 } 
                 else if(min_finan2>min_lo2 && min_finan2>min_rh2){
-                    cout <<"\n\nLa dependencia de finanzas realizo mayor número de llamadas locales con " << min_finan1 <<" para un monto total a pagar de $"<<min_finan1*800 <<endl;
+                    cout <<"\n\nLa dependencia de finanzas realizo mayor número de llamadas celulares con " << min_finan2 <<" para un monto total a pagar de $"<<min_finan2*800 <<endl;
                 }
 
                 if(min_lo3>min_rh3 && min_lo3>min_finan3 ){//evaluamos cual de las internacionales es mayor
-                    cout <<"\n\nLa dependencia de logistica realizo mayor número de llamadas locales con " << min_lo1 <<" para un monto total a pagar de $"<<min_lo1*1500 <<endl;
+                    cout <<"\n\nLa dependencia de logistica realizo mayor número de llamadas internacionales con " << min_lo3 <<" para un monto total a pagar de $"<<min_lo3*1500 <<endl;
                 }
                 else if(min_rh3>min_lo3 && min_rh3>min_finan3){
-                    cout <<"\n\nLa dependencia de recursos humanos realizo mayor número de llamadas locales con " << min_rh1 <<" para un monto total a pagar de $"<<min_rh1*1500 <<endl;
+                    cout <<"\n\nLa dependencia de recursos humanos realizo mayor número de llamadas internacionales con " << min_rh3 <<" para un monto total a pagar de $"<<min_rh3*1500 <<endl;
                 } 
                 else if(min_finan3>min_lo3 && min_finan3>min_rh3){
-                    cout <<"\n\nLa dependencia de finanzas realizo mayor número de llamadas locales con " << min_finan1 <<" para un monto total a pagar de $"<<min_finan1*1500 <<endl;
+                    cout <<"\n\nLa dependencia de finanzas realizo mayor número de llamadas internacionales con " << min_finan3 <<" para un monto total a pagar de $"<<min_finan3*1500 <<endl;
                 }
                 
 
