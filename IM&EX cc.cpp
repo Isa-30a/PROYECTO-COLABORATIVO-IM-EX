@@ -5,18 +5,18 @@ using namespace std;
 
 int main(){
     //variables de opciones
-    int op, op2, ofi,con_ofi, con_llamada,l,max,max_mi,p;
+    int op, op2, ofi,con_ofi, con_llamada,l,max,max_mi,t=0;
     string con_fun;
     //variables 
     int MinXdependencia,llamadasXdependencia=1, min_lo1, min_lo2,min_lo3, min_rh1,min_rh2,min_rh3,min_finan1,min_finan2,min_finan3;
     //variables random
-    int t_llamada,min,to_llamadas=12, k=0;//el valor de to_llamadas debe cambiarse
+    int t_llamada,min,to_llamadas=13, k=0;//el valor de to_llamadas debe cambiarse
 
     //llamadas[minutos][tipo llamada][oficina];
     //matrices se realizaran debido a que el problema no pide (al menos explicitamente) que guarde la informacion del vector-> haremos esto de ultimo
-    string nombre[to_llamadas]={"Carlos","Luis","Pedro","Samara","Marta","Maria","Diego","Cielo","Alvaro","Daniel","Camila","Camilo"};//12 nombres
+    string nombre[to_llamadas]={"Carlos","Luis","Pedro","Samara","Marta","Maria","Diego","Cielo","Alvaro","Daniel","Camila","Camilo","Cielo"};//12 nombres
     //llamadas[minutos][tipo llamada][oficina];
-    int llamadas[to_llamadas][to_llamadas]={{30,1,1},{10,3,3},{15,2,2},{19,1,1},{25,2,2},{5,2,1},{29,3,3},{2,2,1},{27,1,2},{21,3,1},{12,1,3},{15,3,2}};//12 llamadas
+    int llamadas[to_llamadas][to_llamadas]={{30,1,1},{10,3,3},{15,2,2},{19,1,1},{25,2,2},{5,2,1},{29,3,3},{2,2,1},{27,1,2},{21,3,1},{12,1,3},{15,3,2},{20,2,1}};//12 llamadas
     
     //espacio para calcular el pago de las llamadas
     int pago[to_llamadas];
@@ -204,80 +204,72 @@ int main(){
             case 3://Estadisticas
                 //1. Dependencia que realizó el mayor número de llamadas local, celular e internacional y el monto a pagar en cada caso.
                 if(min_lo1>min_rh1 && min_lo1>min_finan1 ){//evaluamos cual de las locales es mayor
-                    cout <<"\n\nLa dependencia de logistica realizo mayor número de llamadas locales con " << min_lo1 <<" para un monto total a pagar de $"<<min_lo1*80 <<endl;
+                    cout <<"\n\nLa dependencia de logistica realizo mayor número de llamadas locales con " << min_lo1 <<" \npara un monto total a pagar de $"<<min_lo1*80 <<endl;
                 }
                 else if(min_rh1>min_lo1 && min_rh1>min_finan1){
-                    cout <<"\n\nLa dependencia de recursos humanos realizo mayor número de llamadas locales con " << min_rh1 <<" para un monto total a pagar de $"<<min_rh1*80 <<endl;
+                    cout <<"\n\nLa dependencia de recursos humanos realizo mayor número de llamadas locales con " << min_rh1 <<" \npara un monto total a pagar de $"<<min_rh1*80 <<endl;
 
                 } 
                 else if(min_finan1>min_lo1 && min_finan1>min_rh1){
-                    cout <<"\n\nLa dependencia de finanzas realizo mayor número de llamadas locales con " << min_finan1 <<" para un monto total a pagar de $"<<min_finan1*80 <<endl;
+                    cout <<"\n\nLa dependencia de finanzas realizo mayor número de llamadas locales con " << min_finan1 <<" \npara un monto total a pagar de $"<<min_finan1*80 <<endl;
                 }
 
                 if(min_lo2>min_rh1 && min_lo2>min_finan2 ){//evaluamos cual de las celulares es mayor
-                    cout <<"\n\nLa dependencia de logistica realizo mayor número de llamadas celulares con " << min_lo2 <<" para un monto total a pagar de $"<<min_lo2*800 <<endl;
+                    cout <<"\n\nLa dependencia de logistica realizo mayor número de llamadas celulares con " << min_lo2 <<" \npara un monto total a pagar de $"<<min_lo2*800 <<endl;
                 }
                 else if(min_rh2>min_lo2 && min_rh2>min_finan2){
-                    cout <<"\n\nLa dependencia de recursos humanos realizo mayor número de llamadas celulares con " << min_rh2 <<" para un monto total a pagar de $"<<min_rh2*800 <<endl;
+                    cout <<"\n\nLa dependencia de recursos humanos realizo mayor número de llamadas celulares con " << min_rh2 <<" \npara un monto total a pagar de $"<<min_rh2*800 <<endl;
                 } 
                 else if(min_finan2>min_lo2 && min_finan2>min_rh2){
-                    cout <<"\n\nLa dependencia de finanzas realizo mayor número de llamadas celulares con " << min_finan2 <<" para un monto total a pagar de $"<<min_finan2*800 <<endl;
+                    cout <<"\n\nLa dependencia de finanzas realizo mayor número de llamadas celulares con " << min_finan2 <<" \npara un monto total a pagar de $"<<min_finan2*800 <<endl;
                 }
 
                 if(min_lo3>min_rh3 && min_lo3>min_finan3 ){//evaluamos cual de las internacionales es mayor
-                    cout <<"\n\nLa dependencia de logistica realizo mayor número de llamadas internacionales con " << min_lo3 <<" para un monto total a pagar de $"<<min_lo3*1500 <<endl;
+                    cout <<"\n\nLa dependencia de logistica realizo mayor número de llamadas internacionales con " << min_lo3 <<" \npara un monto total a pagar de $"<<min_lo3*1500 <<endl;
                 }
                 else if(min_rh3>min_lo3 && min_rh3>min_finan3){
-                    cout <<"\n\nLa dependencia de recursos humanos realizo mayor número de llamadas internacionales con " << min_rh3 <<" para un monto total a pagar de $"<<min_rh3*1500 <<endl;
+                    cout <<"\n\nLa dependencia de recursos humanos realizo mayor número de llamadas internacionales con " << min_rh3 <<" \npara un monto total a pagar de $"<<min_rh3*1500 <<endl;
                 } 
                 else if(min_finan3>min_lo3 && min_finan3>min_rh3){
-                    cout <<"\n\nLa dependencia de finanzas realizo mayor número de llamadas internacionales con " << min_finan3 <<" para un monto total a pagar de $"<<min_finan3*1500 <<endl;
+                    cout <<"\n\nLa dependencia de finanzas realizo mayor número de llamadas internacionales con " << min_finan3 <<" \npara un monto total a pagar de $"<<min_finan3*1500 <<endl;
                 }
 
                 //2. Llamada de mayor duración: indicar el funcionario(s), dependencia(s), tipo y tiempo duración 
-                cout <<"\n\n";
-                cout<<setw(15)<<"Funcionario" <<setw(15)<<"Oficina"<<setw(15)<<"Tipo llamada"<<setw(15)<<"Minutos"<<setw(15)<<""<<endl;
-                for (p = 0; p < to_llamadas; p++){
-                    if(llamadas[p][0]>llamadas[max][0]){
-                        max=p;
+                cout <<"\n\n Llamada de mayor duracion: "<<endl;
+                cout<<"Funcionario" <<setw(15)<<"Oficina"<<setw(15)<<"Tipo llamada"<<setw(15)<<"Minutos"<<setw(15)<<""<<endl;
+                max=0;
+                for (t = 0; t < to_llamadas; t++){
+                    if(llamadas[t][0]>llamadas[max][0]){
+                        max=t;
                     }
-                    
-                    /*la idea es hacer que evalue los min ant con los actuales y sin son mayores que guarde ese valor y si no pues que siga buscando
-					for(int i=0; i<8; i++){
-						pos = i;
-						aux = llamadas[i];
-						while((pos>0) && (llamadas[pos-1]>aux )){
-							llamadas[pos]=llamadas[pos-1];       
-							pos--;
-						}
-						llamadas[pos] = aux;   
-
-                        for(int i=0;i<8;i++){
-						min = i; //guarda la posicion del numero minimo hacemos que el primero numero se tome como minimo en la primera iteracion, luego sera evaluado
-						
-						for(int j=i+1; j<8; j++){ // el ciclo empezara a evaluar desde el 2do elemento de nuestro vector a ordenar
-							if (copia[j]<copia[min]){ //va a evaluar si el siguiente valor  al inicial tomado como minimo es o no el numero minimo
-								min = j;//si es minimo intercambiamos los valores del anterior(en la posicion min) con el actual (en la posicion j) para ir ordenando nuestro vector y el nuevo valor minimo sera el elemento en la posicion j 
-							}
-						}
-						aux = copia[i];//la variable aux tomara el valor del elemento copia en el indice i para realizar el intercambio
-						copia[i] = copia[min];//el elemento en la posicion i toma el valor del elemento en la posicion menor
-						copia[min] = aux;//y por ultimo hacemos que el elemento en la posicion supuestamente minima sea igual al elemento en la posicion i que seria la verdaderamente minima procedimiento que se repetira mientras el arreglo no este ordenado
-					}        
-					}*/
                 }
-                cout<<setw(15)<<nombre[max]<<setw(15)<<llamadas[max][2]<<setw(15)<<llamadas[max][1]<<setw(15)<<llamadas[max][0]<<endl;
+                cout<<nombre[max]<<setw(15)<<llamadas[max][2]<<setw(15)<<llamadas[max][1]<<setw(15)<<llamadas[max][0]<<endl;
                
                 //3. Monto total a pagar por cada tipo de llamada (1: Local - 2: Celular - 3: Internacional) y el Tiempo promedio de las mismas
                 cout<<"\n\n";
-                cout<<"El total a pagar por las llamadas locales es de $" <<(min_lo1+min_rh1+min_finan1)*80<<" y posee un tiempo promedio de "<<(min_lo1+min_rh1+min_finan1)/3 << endl;
-                cout<<"El total a pagar por las llamadas celular es de $" <<(min_lo2+min_rh2+min_finan2)*800<<" y posee un tiempo promedio de "<<(min_lo2+min_rh2+min_finan2)/3 << endl;
-                cout<<"El total a pagar por las llamadas internacionales es de $" <<(min_lo3+min_rh3+min_finan3)*1500<<" y posee un tiempo promedio de "<<(min_lo3+min_rh3+min_finan3)/3 << endl;
+                cout<<"El total a pagar por las llamadas locales es de $" <<(min_lo1+min_rh1+min_finan1)*80<<" \ny posee un tiempo promedio de "<<(min_lo1+min_rh1+min_finan1)/3 << endl<<endl;
+                cout<<"El total a pagar por las llamadas celular es de $" <<(min_lo2+min_rh2+min_finan2)*800<<" \ny posee un tiempo promedio de "<<(min_lo2+min_rh2+min_finan2)/3 << endl<<endl;
+                cout<<"El total a pagar por las llamadas internacionales es de $" <<(min_lo3+min_rh3+min_finan3)*1500<<" \ny posee un tiempo promedio de "<<(min_lo3+min_rh3+min_finan3)/3 << endl<<endl;
                 
                 //4. Nombre del funcionario que realizó el mayor número de llamadas, indicando a que oficina pertenece y la cantidad de llamadas que realizó
-                cout<<"\n\n";
-                cout<<setw(15)<<"Funcionario" <<setw(15)<<"Oficina"<<setw(25)<<"Llamadas realizadas" << setw(15)<<""<<endl;                       
-                cout<<setw(15)<<nombre[2]<<setw(15)<<llamadas[2][2]<<setw(15)<<'2'<<endl;
+                cout<<"\n\nFuncionario con mayor numero de llamadas realizadas: "<<endl;
+                max=0;
+                for (int w = 0; w < to_llamadas; w++){
+                    
+                    for (int q=0; q < to_llamadas; q++){
+                        if(nombre[q]==nombre[max]){
+                            max_min++;
+                            max=q;
+                        }
+                        
+                    }
+                    
+                    if(nombre[w]==nombre[max]){
+                        max=w;
+                    }
+                }
+                cout<<"Funcionario" <<setw(15)<<"Oficina"<<setw(25)<<"Llamadas realizadas" << setw(15)<<""<<endl;                       
+                cout<<nombre[2]<<setw(15)<<llamadas[2][2]<<setw(15)<<'2'<<endl;
                 break;
 
             default://Mensaje salida
