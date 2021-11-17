@@ -33,42 +33,8 @@ int main(){
         }
     }
     //espacio para calcular datos usados en la op 2 y 3
-    for(int p=0;p<to_llamadas;p++){
-        if(llamadas[p][2]==1){//en logistica
-            if(llamadas[p][1]==1){//llamadas locales
-                min_lo1+=llamadas[p][0];
-            }
-            else if(llamadas[p][1]==2){//llamadas celular
-                min_lo2+=llamadas[p][0];
-            }
-            else if(llamadas[p][1]==3){//llamadas internacionales
-                min_lo3+=llamadas[p][0];
-            }
-        }
-        else if(llamadas[p][2]==2){//en recursos humanos
-            if(llamadas[p][1]==1){//llamadas locales
-                min_rh1+=llamadas[p][0];
-            }
-            else if(llamadas[p][1]==2){//llamadas celular
-                min_rh2+=llamadas[p][0];
-            }
-            else if(llamadas[p][1]==3){//llamadas internacionales
-            min_rh3+=llamadas[p][0];
-            }
-                                
-        }
-        else{//en financiero
-            if(llamadas[p][1]==1){//llamadas locales
-                min_finan1+=llamadas[p][0];
-            }
-            else if(llamadas[p][1]==2){//llamadas celular
-                min_finan2+=llamadas[p][0];
-            }
-            else if(llamadas[p][1]==3){//llamadas internacionales
-                min_finan3+=llamadas[p][0];
-            }
-        }
-    }
+    
+    
 
     do{
     //Menu general
@@ -82,7 +48,51 @@ int main(){
         do{ 
             cout<<"Ingrese la opcion: ";cin>>op;
         }while(op<1 && op>4);
-
+        //espacio para calcular datos usados en la op 2 y 3
+        min_lo1=0;                
+        min_lo2=0;
+        min_lo3=0;
+        min_finan1=0;
+        min_finan2=0;
+        min_finan3=0;
+        min_rh1=0;
+        min_rh2=0;
+        min_rh3=0;
+        for(int p=0;p<to_llamadas;p++){
+            if(llamadas[p][2]==1){//en logistica
+                if(llamadas[p][1]==1){//llamadas locales
+                    min_lo1+=llamadas[p][0];
+                }
+                else if(llamadas[p][1]==2){//llamadas celular
+                    min_lo2+=llamadas[p][0];
+                }
+                else if(llamadas[p][1]==3){//llamadas internacionales
+                    min_lo3+=llamadas[p][0];
+                }
+            }
+            else if(llamadas[p][2]==2){//en recursos humanos
+                if(llamadas[p][1]==1){//llamadas locales
+                    min_rh1+=llamadas[p][0];
+                }
+                else if(llamadas[p][1]==2){//llamadas celular
+                    min_rh2+=llamadas[p][0];
+                }
+                else if(llamadas[p][1]==3){//llamadas internacionales
+                min_rh3+=llamadas[p][0];
+                }                                
+            }
+            else{//en financiero
+                if(llamadas[p][1]==1){//llamadas locales
+                    min_finan1+=llamadas[p][0];
+                }
+                else if(llamadas[p][1]==2){//llamadas celular
+                    min_finan2+=llamadas[p][0];
+                }
+                else if(llamadas[p][1]==3){//llamadas internacionales
+                    min_finan3+=llamadas[p][0];
+                }
+            }
+        }
         switch (op){
             case 1://Registro de llamadas
                 cout<<"Ingresar cantidad de llamadas realizadas"<<endl;cin>>to_llamadas;
@@ -168,15 +178,6 @@ int main(){
                         break;
 
                     default://Reporte de llamadas
-                        min_lo1=0;
-                        min_lo2=0;
-                        min_lo3=0;
-                        min_finan1=0;
-                        min_finan2=0;
-                        min_finan3=0;
-                        min_rh1=0;
-                        min_rh2=0;
-                        min_rh3=0;
                         //llamadas[0 minutos][1 tipo llamada][2 oficina];
                         cout<<"Numero de llamadas realizadas: "<<to_llamadas<<endl;
                         cout<<setw(15)<<"# Llamada"<<setw(15)<<"Funcionario" <<setw(15)<<"Oficina"<<setw(15)<<"Tipo llamada"<<setw(15)<<"Minutos"<<setw(15)<<"Pago"<<setw(15)<<""<<endl;
@@ -202,6 +203,7 @@ int main(){
                 break;
             case 3://Estadisticas
                 //1. Dependencia que realizó el mayor número de llamadas local, celular e internacional y el monto a pagar en cada caso.
+                
                 cout <<"\n\nLa dependencia de logistica realizo mayor número de llamadas locales con " << min_lo1 <<" para un monto total a pagar de $"<<min_lo1*80 <<endl;
                 cout <<"La dependencia de recursos humanos realizo mayor número de llamadas celulares con " << min_rh2 <<" para un monto total a pagar de $"<<min_rh2*800 <<endl;
                 cout <<"La dependencia de financiero realizo mayor número de llamadas internacionales con " << min_finan3 <<" para un monto total a pagar de $"<<min_finan3*1500 <<endl;
