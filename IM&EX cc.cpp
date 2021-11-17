@@ -5,7 +5,7 @@ using namespace std;
 
 int main(){
     //variables de opciones
-    int op, op2, ofi,con_ofi, con_llamada,l,max,max_min,t=0;
+    int op, op2, ofi,con_ofi, con_llamada,l,max,max_min,t=0,pos;
     string con_fun;
     //variables 
     int MinXdependencia,llamadasXdependencia=1, min_lo1, min_lo2,min_lo3, min_rh1,min_rh2,min_rh3,min_finan1,min_finan2,min_finan3;
@@ -260,21 +260,22 @@ int main(){
                 cout<<"\n\nFuncionario con mayor numero de llamadas realizadas: "<<endl;
                 max=0;
                 for (int w = 0; w < to_llamadas; w++){
-                    
+                    max_min=0;
+                    //for para guardar el mayor numero de llamadas
                     for (int q=0; q < to_llamadas; q++){
-                        if(nombre[q]==nombre[max]){
+                        if(nombre[q]==nombre[w]){//nombre[w] debe ser un valor fijo que se aumentara cuando salga del ciclo
                             max_min++;
-                            max=q;
+                            max=max_min;
                         }
-                        
                     }
-                    
-                    if(nombre[w]==nombre[max]){
-                        max=w;
+                    if(max_min>max){
+                        max=max_min;
+                        pos=w;
                     }
                 }
+                
                 cout<<"Funcionario" <<setw(15)<<"Oficina"<<setw(25)<<"Llamadas realizadas" << setw(15)<<""<<endl;                       
-                cout<<nombre[2]<<setw(15)<<llamadas[2][2]<<setw(15)<<'2'<<endl;
+                cout<<nombre[pos]<<setw(15)<<llamadas[pos][2]<<setw(15)<<max<<endl;
                 break;
 
             default://Mensaje salida
