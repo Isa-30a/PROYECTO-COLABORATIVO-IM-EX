@@ -5,7 +5,7 @@ using namespace std;
 
 int main(){
     //variables de opciones
-    int op, op2, ofi,con_ofi, con_llamada,l,max,max_mi,t=0;
+    int op, op2, ofi,con_ofi, con_llamada,l,max,max_min,t=0;
     string con_fun;
     //variables 
     int MinXdependencia,llamadasXdependencia=1, min_lo1, min_lo2,min_lo3, min_rh1,min_rh2,min_rh3,min_finan1,min_finan2,min_finan3;
@@ -38,6 +38,9 @@ int main(){
 
     do{
     //Menu general
+        system("pause");
+        system("cls");
+        
         cout<<setw(15)<<"IM&EX SA."<<endl;
         cout<<"\tCONTROL DE LLAMADAS - CENTRO DE COMUNICACIONES"<<endl;
         cout<<"1. Registro de llamadas"<<endl;
@@ -48,6 +51,8 @@ int main(){
         do{ 
             cout<<"Ingrese la opcion: ";cin>>op;
         }while(op<1 && op>4);
+        system("cls");
+        system("pause");
         //espacio para calcular datos usados en la op 2 y 3
         min_lo1=0;                
         min_lo2=0;
