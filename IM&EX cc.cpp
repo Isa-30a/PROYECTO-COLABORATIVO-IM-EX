@@ -260,12 +260,11 @@ int main(){
                 cout<<"\n\nFuncionario con mayor numero de llamadas realizadas: "<<endl;
                 max=0;
                 for (int w = 0; w < to_llamadas; w++){
-                    max_min=0;
+                    max_min=1;
                     //for para guardar el mayor numero de llamadas
-                    for (int q=0; q < to_llamadas; q++){
-                        if(nombre[q]==nombre[w]){//nombre[w] debe ser un valor fijo que se aumentara cuando salga del ciclo
-                            max_min++;
-                            max=max_min;
+                    for (int q=w+1; q < to_llamadas+1; q++){
+                        if(nombre[w]==nombre[q]){
+                            ++max_min;
                         }
                     }
                     if(max_min>max){

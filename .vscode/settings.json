@@ -14,7 +14,8 @@
   "C_Cpp_Runner.warningsAsError": false,
   "files.associations": {
     "iomanip": "cpp",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "ostream": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "C:/Users/ISABELLA/Downloads/w64devkit-1.10.0/w64devkit/bin/gcc.exe"
 }
