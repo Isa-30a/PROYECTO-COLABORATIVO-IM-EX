@@ -181,8 +181,7 @@ int main(){
                         cout<<"Numero de llamadas realizadas: "<<to_llamadas<<endl;
                         cout<<setw(15)<<"# Llamada"<<setw(15)<<"Funcionario" <<setw(15)<<"Oficina"<<setw(15)<<"Tipo llamada"<<setw(15)<<"Minutos"<<setw(15)<<"Pago"<<setw(15)<<""<<endl;
                         
-                        for(int e=0; e<to_llamadas;e++)
-
+                        for(int e=0; e<to_llamadas;e++){
                             cout<<setw(15)<<e+1<<setw(15)<<nombre[e]<<setw(15)<<llamadas[e][2]<<setw(15)<<llamadas[e][1]<<setw(15)<<llamadas[e][0]<<setw(15)<<pago[e]<<endl;
                         }
                         cout<<"\tLOGISTICA"<<endl;
@@ -199,7 +198,7 @@ int main(){
                         
                     break;
                 
-
+                }
                 break;
             case 3://Estadisticas
                 //1. Dependencia que realizó el mayor número de llamadas local, celular e internacional y el monto a pagar en cada caso.
