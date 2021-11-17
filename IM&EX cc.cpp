@@ -5,7 +5,7 @@ using namespace std;
 
 int main(){
     //variables de opciones
-    int op, op2, ofi,con_ofi, con_llamada,l;
+    int op, op2, ofi,con_ofi, con_llamada,l,pos,max_mi;
     string con_fun;
     //variables 
     int MinXdependencia,llamadasXdependencia=1, min_lo1, min_lo2,min_lo3, min_rh1,min_rh2,min_rh3,min_finan1,min_finan2,min_finan3;
@@ -233,19 +233,35 @@ int main(){
                 else if(min_finan3>min_lo3 && min_finan3>min_rh3){
                     cout <<"\n\nLa dependencia de finanzas realizo mayor número de llamadas internacionales con " << min_finan3 <<" para un monto total a pagar de $"<<min_finan3*1500 <<endl;
                 }
-                
 
                 //2. Llamada de mayor duración: indicar el funcionario(s), dependencia(s), tipo y tiempo duración 
                 cout <<"\n\n";
                 cout<<setw(15)<<"Funcionario" <<setw(15)<<"Oficina"<<setw(15)<<"Tipo llamada"<<setw(15)<<"Minutos"<<setw(15)<<""<<endl;
-                for (int p = 0; p < 1; p++){
+                for (int p = 0; p < to_llamadas; p++){
+                    pos=p;
+                    if(llamadas[p][0]>llamadas[pos][0]){
+                        max_mi=llamadas[p][0];
+                    }
+                    else{
+                        max_mi;
+                    }
+                    /*la idea es hacer que evalue los min ant con los actuales y sin son mayores que guarde ese valor y si no pues que siga buscando
+					for(int i=0; i<8; i++){
+						pos = i;
+						aux = llamadas[i];
+						while((pos>0) && (llamadas[pos-1]>aux )){
+							llamadas[pos]=llamadas[pos-1];       
+							pos--;
+						}
+						llamadas[pos] = aux;              
+					}*/
                     cout<<setw(15)<<nombre[p]<<setw(15)<<llamadas[p][2]<<setw(15)<<llamadas[p][1]<<setw(15)<<llamadas[p][0]<<endl;
                 }
                 //3. Monto total a pagar por cada tipo de llamada (1: Local - 2: Celular - 3: Internacional) y el Tiempo promedio de las mismas
                 cout<<"\n\n";
-                cout<<"El total a pagar por las llamadas locales es de $" <<(min_lo1+min_rh1+min_finan1)*80<<" y posee un tiempo promedio de "<<(min_lo1+min_rh1+min_finan1)/4 << endl;
-                cout<<"El total a pagar por las llamadas celular es de $" <<(min_lo2+min_rh2+min_finan2)*800<<" y posee un tiempo promedio de "<<(min_lo2+min_rh2+min_finan2)/4 << endl;
-                cout<<"El total a pagar por las llamadas internacionales es de $" <<(min_lo3+min_rh3+min_finan3)*1500<<" y posee un tiempo promedio de "<<(min_lo3+min_rh3+min_finan3)/4 << endl;
+                cout<<"El total a pagar por las llamadas locales es de $" <<(min_lo1+min_rh1+min_finan1)*80<<" y posee un tiempo promedio de "<<(min_lo1+min_rh1+min_finan1)/3 << endl;
+                cout<<"El total a pagar por las llamadas celular es de $" <<(min_lo2+min_rh2+min_finan2)*800<<" y posee un tiempo promedio de "<<(min_lo2+min_rh2+min_finan2)/3 << endl;
+                cout<<"El total a pagar por las llamadas internacionales es de $" <<(min_lo3+min_rh3+min_finan3)*1500<<" y posee un tiempo promedio de "<<(min_lo3+min_rh3+min_finan3)/3 << endl;
                 
                 //4. Nombre del funcionario que realizó el mayor número de llamadas, indicando a que oficina pertenece y la cantidad de llamadas que realizó
                 cout<<"\n\n";
