@@ -1,9 +1,10 @@
 #include <iostream>
 #include <iomanip>
-
+#include<locale.h>
 using namespace std;
 
 int main(){
+	setlocale(LC_ALL,"spanish");
     //variables de opciones
     int op, op2, ofi,con_ofi, con_llamada,l,max,max_min,t=0,pos;
     string con_fun;
@@ -216,27 +217,27 @@ int main(){
 
                 } 
                 else if(min_finan1>min_lo1 && min_finan1>min_rh1){
-                    cout <<"\n\nLa dependencia de finanzas realizo mayor nÃºmero de llamadas locales con " << min_finan1 <<" \npara un monto total a pagar de $"<<min_finan1*80 <<endl;
+                    cout <<"\n\nLa dependencia de finanzas realizo mayor numero de llamadas locales con " << min_finan1 <<" \npara un monto total a pagar de $"<<min_finan1*80 <<endl;
                 }
 
                 if(min_lo2>min_rh1 && min_lo2>min_finan2 ){//evaluamos cual de las celulares es mayor
-                    cout <<"\n\nLa dependencia de logistica realizo mayor nÃºmero de llamadas celulares con " << min_lo2 <<" \npara un monto total a pagar de $"<<min_lo2*800 <<endl;
+                    cout <<"\n\nLa dependencia de logistica realizo mayor numero de llamadas celulares con " << min_lo2 <<" \npara un monto total a pagar de $"<<min_lo2*800 <<endl;
                 }
                 else if(min_rh2>min_lo2 && min_rh2>min_finan2){
-                    cout <<"\n\nLa dependencia de recursos humanos realizo mayor nÃºmero de llamadas celulares con " << min_rh2 <<" \npara un monto total a pagar de $"<<min_rh2*800 <<endl;
+                    cout <<"\n\nLa dependencia de recursos humanos realizo mayor número de llamadas celulares con " << min_rh2 <<" \npara un monto total a pagar de $"<<min_rh2*800 <<endl;
                 } 
                 else if(min_finan2>min_lo2 && min_finan2>min_rh2){
-                    cout <<"\n\nLa dependencia de finanzas realizo mayor nÃºmero de llamadas celulares con " << min_finan2 <<" \npara un monto total a pagar de $"<<min_finan2*800 <<endl;
+                    cout <<"\n\nLa dependencia de finanzas realizo mayor número de llamadas celulares con " << min_finan2 <<" \npara un monto total a pagar de $"<<min_finan2*800 <<endl;
                 }
 
                 if(min_lo3>min_rh3 && min_lo3>min_finan3 ){//evaluamos cual de las internacionales es mayor
-                    cout <<"\n\nLa dependencia de logistica realizo mayor nÃºmero de llamadas internacionales con " << min_lo3 <<" \npara un monto total a pagar de $"<<min_lo3*1500 <<endl;
+                    cout <<"\n\nLa dependencia de logistica realizo mayor número de llamadas internacionales con " << min_lo3 <<" \npara un monto total a pagar de $"<<min_lo3*1500 <<endl;
                 }
                 else if(min_rh3>min_lo3 && min_rh3>min_finan3){
-                    cout <<"\n\nLa dependencia de recursos humanos realizo mayor nÃºmero de llamadas internacionales con " << min_rh3 <<" \npara un monto total a pagar de $"<<min_rh3*1500 <<endl;
+                    cout <<"\n\nLa dependencia de recursos humanos realizo mayor número de llamadas internacionales con " << min_rh3 <<" \npara un monto total a pagar de $"<<min_rh3*1500 <<endl;
                 } 
                 else if(min_finan3>min_lo3 && min_finan3>min_rh3){
-                    cout <<"\n\nLa dependencia de finanzas realizo mayor nÃºmero de llamadas internacionales con " << min_finan3 <<" \npara un monto total a pagar de $"<<min_finan3*1500 <<endl;
+                    cout <<"\n\nLa dependencia de finanzas realizo mayor número de llamadas internacionales con " << min_finan3 <<" \npara un monto total a pagar de $"<<min_finan3*1500 <<endl;
                 }
 
                 //2. Llamada de mayor duraciÃ³n: indicar el funcionario(s), dependencia(s), tipo y tiempo duraciÃ³n 
